@@ -1,0 +1,65 @@
+﻿<div class="wrapper wrapper-content animated fadeIn">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<div class="row">
+								<div class="col-sm-6">
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalClassesSubjects" ng-click="onclick_btnCreate()">
+										Thêm mới
+									</button>
+								</div>
+								<div class="col-sm-6">
+									<header-bar></header-bar>
+								</div>
+							</div>
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Tên lớp</th>
+											<th>Học kỳ</th>
+											<th>Những môn học</th>
+											<th>Hành động</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="item in classesSubjects | filter: searchKeyword" ng-click="onclick_row(item)">
+											<td ng-bind="$index + 1"></td>
+											<td ng-bind="item.ClaSub_ClassName"></td>
+											<td ng-bind="'HK' + item.ClaSub_Semester"></td>
+											<td>
+												<label class="label label-default margin-right-3" ng-repeat="x in item.ClaSub_SubNames" ng-bind="x"></label>
+											</td>
+											<td class="text-center">
+												<div class="btn-group">
+													<button type="button" class="btn-success btn btn-xs" data-toggle="modal" data-target="#modalClassesSubjects"
+													 ng-click="onclick_btnUpdate(item)">
+														Sửa
+													</button>
+													<button type="button" class="btn-danger btn btn-xs" data-toggle="modal" data-target="#modalDelete"
+													 ng-click="onclick_btnDelete(item)">
+														Xóa
+													</button>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<classes-subjects-modal></classes-subjects-modal>
+	<delete-modal></delete-modal>
+
+</div>
+<script src="assets/myJS/custom.js"></script>

@@ -1,0 +1,19 @@
+﻿<div class="middle-box text-center loginscreen animated fadeIn">
+	<div>
+		<h3>WebApp Quản lý học sinh</h3>
+		<form class="m-t" role="form" name="fLogin" ng-submit="onsubmit_fLogin()">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="{{'Username' | translate}}" ng-model="login.Username" required="">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" placeholder="{{'Password' | translate}}" ng-model="login.Password" required="">
+			</div>
+			<div class="text-center">Username: admin</div>
+			<div class="text-center">Password: Admin@123</div>
+			<div class="checkbox">
+				<label><input type="checkbox" name="IsRemember" ng-model="IsRemember" />Remember me</label>
+			</div>
+			<button type="submit" class="btn btn-primary block full-width m-b margin-top-10px">Login</button>
+		</form>
+	</div>
+</div>

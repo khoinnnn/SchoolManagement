@@ -1,0 +1,79 @@
+﻿<div class="wrapper wrapper-content animated fadeIn">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<div class="row">
+								<div class="col-sm-6">
+									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalClasses" ng-click="onclick_btnCreate()">
+										Thêm mới
+									</button>
+									<button type="button" class="btn btn-primary" ng-click="onclick_btnClassesSchedules()">
+										Lớp - Học kỳ - Môn học
+									</button>
+								</div>
+								<div class="col-sm-6">
+									<header-bar></header-bar>
+								</div>
+							</div>
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>Tên</th>
+											<th>Niên khóa</th>
+											<th>Học kỳ hiện tại</th>
+											<th>Hành động</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="item in classes | filter: searchKeyword" ng-click="onclick_row(item)">
+											<td ng-bind="$index + 1"></td>
+											<td ng-bind="item.Cla_Name"></td>
+											<td ng-bind="item.Cla_SchoolYear"></td>
+											<td>
+												<span ng-if="item.Cla_CurrentSemester !== 0" ng-bind="'HK' + item.Cla_CurrentSemester"></span>
+												<span ng-if="item.Cla_CurrentSemester === 0" ng-bind="item.Cla_CurrentSemester"></span>
+											</td>
+											<td class="text-center">
+												<div class="btn-group">
+													<button type="button" class="btn-default btn btn-xs" ng-click="onclick_btnSetSubjects(item)">
+														Xếp môn
+													</button>
+													<button type="button" class="btn-default btn btn-xs change-color" data-toggle="modal" data-target="#modalCurrentSubjects" ng-click="onclick_btnCurrentSubjects(item)">
+														Môn học
+													</button>
+													<button type="button" class="btn-warning btn btn-xs" ng-click="onclick_btnStudents(item)">
+														SV
+													</button>
+													<button type="button" class="btn-success btn btn-xs" data-toggle="modal" data-target="#modalClasses"
+													 ng-click="onclick_btnUpdate(item)">
+														Sửa
+													</button>
+													<button type="button" class="btn-danger btn btn-xs" data-toggle="modal" data-target="#modalDelete"
+													 ng-click="onclick_btnDelete(item)">
+														Xóa
+													</button>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<classes-modal></classes-modal>
+	<classes-current-subjects-modal><classes-current-subjects-modal>
+	<delete-modal></delete-modal>
+
+</div>
+<script src="assets/myJS/custom.js"></script>

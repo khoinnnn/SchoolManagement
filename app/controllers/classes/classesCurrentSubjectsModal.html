@@ -1,0 +1,54 @@
+﻿<div class="modal inmodal" id="modalCurrentSubjects" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content animated fadeIn">
+			<form name="fForm" ng-submit="onsubmit_fForm()">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">{{$root.modalTitle}}</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label for="" class="col-sm-3">Học kỳ</label>
+							<div class="col-sm-9">
+								<select class="form-control" ng-model="class.Cla_CurrentSemester" disabled>
+									<option value="">== Chọn ==</option>
+									<option ng-repeat="item in $root.seed.SEMESTERS" ng-value="item.id" ng-bind="item.name"></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th class="text-center">#</th>
+									<th class="text-center">Tên môn học</th>
+									<th class="text-center">Số tiết</th>
+									<th class="text-center">Lý thuyết</th>
+									<th class="text-center">Thực hành</th>
+									<th class="text-center">Bài tập</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in currentSubjects">
+										<td ng-bind="$index + 1"></td>
+										<td ng-bind="item.Sub_Name"></td>
+										<td ng-bind="item.Sub_Lessons"></td>
+										<td ng-bind="item.Sub_CreditTheory"></td>
+										<td ng-bind="item.Sub_CreditPractice"></td>
+										<td ng-bind="item.Sub_CreditExercise"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-white" type="button" data-dismiss="modal">Hủy</button>
+					</div>
+			</form>
+		</div>
+	</div>
+</div>

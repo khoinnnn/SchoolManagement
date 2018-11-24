@@ -1,0 +1,77 @@
+﻿body {
+	background: whitesmoke !important;
+}
+fieldset {
+	display: block;
+	-webkit-margin-start: 2px;
+	-webkit-margin-end: 2px;
+	-webkit-padding-before: 0.35em;
+	-webkit-padding-start: 0.75em;
+	-webkit-padding-end: 0.75em;
+	-webkit-padding-after: 0.625em;
+	min-width: -webkit-min-content;
+	border-width: 2px;
+	border-style: groove;
+	border-color: threedface;
+	border-image: initial;
+}
+legend {
+	width: auto;
+	border-bottom: none;
+}
+.table td,
+.table th {
+	white-space: nowrap;
+	width: 1%;
+}
+select {
+	text-align-last: center;
+}
+button {
+	border-radius: 0% !important;
+}
+.btn {
+	border-radius: 0% !important;
+}
+.wrapper {
+	padding: 0px !important;
+	margin-top: 10px !important;
+}
+/* The max width is dependant on the container (more info below) */
+.popover {
+	max-width: none; /* Max Width of the popover (depending on the container!) */
+}
+/*.popover-content {
+	word-wrap: break-word;
+}*/
+/* Angular Flash */
+.custom-flash {
+	font-size: 16px;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	width: 30%;
+	z-index: 999999;
+}
+/* Angular Bootstrap Datetimepicker */
+.dp a input {
+	color: black;
+}
+.dp a i {
+	color: black;
+}
+/* Angular Datetimepicker */
+.datetimepicker .active,
+.datetimepicker .active:hover,
+.datetimepicker .active.disabled,
+.datetimepicker .active.disabled:hover {
+	background-color: gray;
+	background-image: linear-gradient(to bottom, gray, gray);
+	background-repeat: repeat-x;
+	border-color: gray gray gray;
+}
+/* Angular Momentpicker */
+.moment-picker {
+	z-index: 5000 !important;
+}
+

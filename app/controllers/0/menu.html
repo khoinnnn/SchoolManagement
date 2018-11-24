@@ -1,0 +1,36 @@
+﻿<div class="row border-bottom white-bg">
+	<nav class="navbar navbar-expand-lg navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed"
+			 type="button">
+				<i class="fa fa-reorder"></i>
+			</button>
+			<a href="" class="navbar-brand" ng-bind="$root.seed.APP_NAME"></a>
+		</div>
+		<div class="navbar-collapse collapse" id="navbar">
+			<ul class="nav navbar-nav mr-auto">
+				<li>
+					<a aria-expanded="false" role="button" href="#!/">Trang chủ</a>
+				</li>
+				<li>
+					<a aria-expanded="false" role="button" href="#!/subjects">Môn học</a>
+				</li>
+				<li>
+					<a aria-expanded="false" role="button" href="#!/classes">Lớp học</a>
+				</li>
+				<li>
+					<a aria-expanded="false" role="button" href="#!/students">Sinh viên</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-top-links navbar-right">
+				<li ng-bind="$root.user.UserName"></li>
+				<li>
+					<a data-toggle="modal" data-target="#modalLogout">
+						<i class="fa fa-sign-out"></i> {{'Log out' | translate}}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div>
+<logout-modal></logout-modal>

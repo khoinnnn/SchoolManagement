@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Philosolve</title>
+
+	<!-- Template's setting -->
+	<link href="assets/template/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/template/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/template/css/animate.css" rel="stylesheet">
+	<link href="assets/template/css/style.css" rel="stylesheet">
+
+	<!-- Plugins' CSS -->
+	<link href="assets/angularjsPlugins/angular-flash/angular-flash.min.css" rel="stylesheet">
+	<link href="assets/angularjsPlugins/angularjs-bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet">
+	<link href="assets/angularjsPlugins//angular-moment-picker/angular-moment-picker.min.css" rel="stylesheet">
+
+	<!-- My CSS -->
+	<link href="assets/myCSS/override.css" rel="stylesheet">
+	<link href="assets/myCSS/custom.css" rel="stylesheet">
+
+</head>
+<body class="top-navigation md-skin pace-done fixed-nav" ng-controller="index" ng-cloak>
+	<div id="wrapper">
+		<div id="page-wrapper" class="gray-bg">
+
+			<!-- Menu -->
+			<menu ng-if="$root.isAuthorized"></menu>
+			<!-- /Menu -->
+			<!-- AJAX View -->
+			<ng-view></ng-view>
+			<!-- /AJAX View -->
+			<!-- Flash -->
+			<flash-message show-close="true"></flash-message>
+			<!-- /Flash -->
+
+		</div>
+	</div>
+
+	<!-- Template's setting -->
+	<!-- Mainly scripts -->
+	<script src="assets/template/js/jquery-3.1.1.min.js"></script>
+	<script src="assets/template/js/popper.min.js"></script>
+	<script src="assets/template/js/bootstrap.js"></script>
+	<script src="assets/template/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="assets/template/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="assets/template/js/inspinia.js"></script>
+	<script src="assets/template/js/plugins/pace/pace.min.js"></script>
+
+	<!-- JS Plugins -->
+	<script src="assets/javascriptPlugins/moment-develop/min/moment-with-locales.min.js"></script>
+	<script src="assets/javascriptPlugins/js-xlsx/xlsx.full.min.js"></script>
+	<script src="assets/javascriptPlugins/js-xlsx/jszip.js"></script>
+
+	<!-- AngularJS Framework -->
+	<script src="assets/angularjs/angular.min.js"></script>
+	<script src="assets/angularjs/angular-route.min.js"></script>
+	<script src="assets/angularjs/angular-aria.min.js"></script>
+	<script src="assets/angularjs/angular-sanitize.min.js"></script>
+	<script src="assets/angularjs/angular-animate.min.js"></script>
+	<script src="assets/angularjs/angular-cookies.min.js"></script>
+	<script src="assets/angularjs/angular-loader.min.js"></script>
+	<script src="assets/angularjs/angular-touch.min.js"></script>
+
+	<!-- AngularJS Plugins -->
+	<script src="assets/angularjsPlugins/angular-flash/angular-flash.min.js"></script>
+	<script src="assets/angularjsPlugins/angularjs-bootstrap-datetimepicker/js/datetimepicker.js"></script>
+	<script src="assets/angularjsPlugins/angularjs-bootstrap-datetimepicker/js/datetimepicker.templates.js"></script>
+	<script src="assets/angularjsPlugins/angular-moment-picker/angular-moment-picker.min.js"></script>
+	<script src="assets/angularjsPlugins/ng-file-upload/dist/ng-file-upload-all.min.js"></script>
+	<script src="assets/angularjsPlugins/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+	<script src="assets/angularjsPlugins/angular-md5/angular-md5.min.js"></script>
+	<script src="assets/angularjsPlugins/angular-translate/angular-translate.js"></script>
+
+	<!-- AngularJS App -->
+	<script src="app/app.js"></script>
+	<script src="app/configs/app.start.js"></script>
+	<!-- Configs -->
+	<script src="app/configs/routes.config.js"></script>
+	<!-- Services -->
+	<script src="app/constants/seed.js"></script>
+	<script src="app/factories/api.js"></script>
+	<script src="app/factories/func.js"></script>
+	<script src="app/services/client.js"></script>
+	<!-- Custom directives -->
+	<script src="app/directives/custom/formatNumber.directive.js"></script>
+	<!-- Module directives -->
+	<script src="app/directives/menu.directive.js"></script>
+	<script src="app/directives/logoutModal.directive.js"></script>
+	<script src="app/directives/filterBar.directive.js"></script>
+	<script src="app/directives/headerBar.directive.js"></script>
+	<script src="app/directives/deleteModal.directive.js"></script>
+	<!-- ========== -->
+	<script src="app/directives/classesModal.directive.js"></script>
+	<script src="app/directives/subjectsModal.directive.js"></script>
+	<script src="app/directives/classesSubjectsModal.directive.js"></script>
+	<script src="app/directives/classesCurrentSubjectsModal.directive.js"></script>
+	<!-- Controllers -->
+	<script src="app/controllers/index.controller.js"></script>
+	<script src="app/controllers/login/login.controller.js"></script>
+	<!-- ========== -->
+	<script src="app/controllers/classes/classes.controller.js"></script>
+	<script src="app/controllers/subjects/subjects.controller.js"></script>
+	<script src="app/controllers/students/students.controller.js"></script>
+	<script src="app/controllers/students/studentsCU.controller.js"></script>
+	<script src="app/controllers/classes/classesSubjects.controller.js"></script>
+	<script src="app/controllers/classes/classesSchedules.controller.js"></script>
+</body>
+</html>

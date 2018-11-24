@@ -1,0 +1,134 @@
+﻿<div class="wrapper wrapper-content animated fadeIn">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<form name="fStudent" ng-submit="onsubmit_fStudent()">
+								<div class="row">
+									<div class="col-sm-6">
+										<fieldset>
+											<legend>Thông tin sinh viên</legend>
+											<div class="col-sm-12">
+												<div class="form-horizontal">
+													<div class="form-group">
+														<label class="col-sm-3" for="">Hình</label>
+														<div class="col-sm-9">
+															<img class="img-thumbnail w100-h100 image-fit" ngf-thumbnail="student.Stu_Image">
+															<button class="btn btn-primary btn-sm" ngf-select accept="image/*" ngf-model-options="{updateOn: 'change drop'}"
+															 ngf-max-files="1" ngf-max-size="25MB" ng-model="student.Stu_Image">
+																Duyệt
+															</button>
+															<button class="btn btn-primary btn-sm" type="button" ng-click="onclick_btnSetDefaultImage()">Mặc định</button>
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3" for="">Mã</label>
+														<div class="col-sm-9">
+															<input class="form-control" type="text" name="Stu_Code" ng-model="student.Stu_Code" disabled />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3" for="">Tên</label>
+														<div class="col-sm-9">
+															<input class="form-control" type="text" name="Stu_Name" ng-model="student.Stu_Name" required />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3" for="">Ngày sinh</label>
+														<div class="col-sm-9">
+															<input class="form-control" type="date" name="Stu_DOB" ng-model="student.Stu_DOB" required />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3" for="">Email</label>
+														<div class="col-sm-9">
+															<input class="form-control" type="email" name="Stu_Email" ng-model="student.Stu_Email" required />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3" for="">Điện thoại</label>
+														<div class="col-sm-9">
+															<input class="form-control" type="text" name="Stu_Phone" ng-model="student.Stu_Phone" required />
+														</div>
+													</div>
+													<div class="form-group">
+														<label class="col-sm-3" for="">Lớp</label>
+														<div class="col-sm-9">
+															<select class="form-control" name="Gender" ng-model="student.Stu_ClassId" required>
+																<option value="">== Chọn ==</option>
+																<option ng-repeat="item in classes" ng-value="item.Cla_Id" ng-bind="item.Cla_Name"></option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<!-- ... -->
+											</div>
+										</fieldset>
+									</div>
+									<div class="col-sm-6">
+										<fieldset>
+											<legend>Thông tin môn học</legend>
+											<div class="panel-body">
+												<div class="ibox-content">
+													<div class="panel-group" id="accordion">
+														<div class="panel panel-default" ng-repeat="item in classesSubjects">
+															<div class="panel-heading">
+																<h4 class="panel-title">
+																	<a class="full-width block" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}"
+																	 target="_self" ng-bind="'HK' + item.ClaSub_Semester + ' (bấm vào để xem)'"></a>
+																</h4>
+															</div>
+															<div id="collapse{{$index}}" class="panel-collapse collapse">
+																<div class="panel-body">
+																	<div class="table-responsive">
+																		<table class="table table-bordered">
+																			<thead>
+																				<tr>
+																					<th class="text-center">#</th>
+																					<th class="text-center">Tên môn học</th>
+																					<th class="text-center">Số tiết</th>
+																					<th class="text-center">Lý thuyết</th>
+																					<th class="text-center">Thực hành</th>
+																					<th class="text-center">Bài tập</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr ng-repeat="x in item.ClaSub_Subjects">
+																					<td ng-bind="$index + 1"></td>
+																					<td ng-bind="x.Sub_Name"></td>
+																					<td ng-bind="x.Sub_Lessons"></td>
+																					<td ng-bind="x.Sub_CreditTheory"></td>
+																					<td ng-bind="x.Sub_CreditPractice"></td>
+																					<td ng-bind="x.Sub_CreditExercise"></td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+								<div class="row margin-top-10px">
+									<div class="col-sm-12 text-center">
+										<button class="btn btn-primary" type="submit">Lưu</button>
+										<button class="btn btn-danger" type="button" onclick="window.history.back()">Hủy</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="assets/myJS/custom.js"></script>

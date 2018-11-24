@@ -1,0 +1,62 @@
+﻿<div class="wrapper wrapper-content animated fadeIn">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<div class="row">
+								<fieldset ng-repeat="item in classes">
+									<legend ng-bind="item.Cla_Name"></legend>
+									<div class="panel-body">
+											<div class="ibox-content">
+												<div class="panel-group" id="accordion">
+													<div class="panel panel-default" ng-repeat="x in item.Cla_ClassesSubjects">
+														<div class="panel-heading">
+															<h4 class="panel-title">
+																<a class="full-width block" data-toggle="collapse" data-parent="#accordion" href="#collapse{{x.ClaSub_Id}}"
+																 target="_self" ng-bind="'HK' + x.ClaSub_Semester + ' (bấm vào để xem)'"></a>
+															</h4>
+														</div>
+														<div id="collapse{{x.ClaSub_Id}}" class="panel-collapse collapse">
+															<div class="panel-body">
+																<div class="table-responsive">
+																	<table class="table table-bordered">
+																		<thead>
+																			<tr>
+																				<th class="text-center">#</th>
+																				<th class="text-center">Tên môn học</th>
+																				<th class="text-center">Số tiết</th>
+																				<th class="text-center">Lý thuyết</th>
+																				<th class="text-center">Thực hành</th>
+																				<th class="text-center">Bài tập</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr ng-repeat="y in x.ClaSub_Subjects">
+																				<td ng-bind="$index + 1"></td>
+																				<td ng-bind="y.Sub_Name"></td>
+																				<td ng-bind="y.Sub_Lessons"></td>
+																				<td ng-bind="y.Sub_CreditTheory"></td>
+																				<td ng-bind="y.Sub_CreditPractice"></td>
+																				<td ng-bind="y.Sub_CreditExercise"></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="assets/myJS/custom.js"></script>
